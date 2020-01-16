@@ -38,27 +38,50 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
+.iframe-container {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.iframe-container iframe {
+    border: 0;
+    height: 100%;
+    left: 15%;
+    position: absolute;
+    top: -20%;
+    width: 70%;
 }
 
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
 }
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {
+        position: relative;
+    }
+
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+}
+
 </style>
 </head>
 <body>
@@ -69,21 +92,20 @@ body {
   <a href="publications.html">Publications</a>
   <a href="#contact">Patents</a>
   <a href="#about">Contacts</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
   </font>
 </div>
 
-<div style="padding-left:16px">
+<div style="padding-left:0px">
     <center>
         <h1>Jeong-Mo Hong</h1>
     </center>
+</div>
+
+<div class="iframe-container">
     <!--<p>Under construction</p>-->
     <!--<img src="images/ACaseStudyOfFluidSimulation.png">-->
-    <center>
-        <iframe src="https://player.vimeo.com/video/385168503" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-    </center>
+    <iframe src="https://player.vimeo.com/video/385168503" allow="autoplay; fullscreen" allowfullscreen></iframe>    
 </div>
 
 <script>

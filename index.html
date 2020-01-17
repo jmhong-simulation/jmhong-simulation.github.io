@@ -1,195 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <!--<link rel="stylesheet" type="text/css" href="styles.css">-->
+
 <style>
-* {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  font-family: Garamond, Arial, Helvetica;
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: #51549d;
+#videoBG {
+    position: fixed;
+    z-index: -1;
 }
 
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 10px 16px;
-    text-decoration: none;
-    font-size: 15px;
+@media (min-aspect-ratio: 16/9) {
+    #videoBG {
+        width: 100%;
+        height: auto;
+    }
 }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+@media (max-aspect-ratio: 16/9) {
+    #videoBG {
+        width: auto;
+        height: 100%;
+    }
 }
 
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.topnav .icon {
-  display: none;
-}
-
-.iframe-container {
-  overflow: hidden;
-  padding-top: 56.25%;
-  position: relative;
-}
-
-.iframe-container iframe {
-    border: 0;
-    height: 100%;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-}
-
-@media screen and (max-width: 600px) {
-    .topnav a:not(:first-child) {
+@media (max-width: 767px) {
+    #videoBG {
         display: none;
     }
 
-    .topnav a.icon {
-        float: right;
-        display: block;
+    body {
+        background: url('video_cover4.png');
+        background-size: cover;
     }
 }
-
-@media screen and (max-width: 600px) {
-    .topnav.responsive {
-        position: relative;
-    }
-
-    .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-}
-
-#myVideo {
-  position: center;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-}
-
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
-}
-
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
-
-#myBtn:hover {
-  background: #ddd;
-  color: black;
-}
-
-/*.div1{ background-color: red; height: 100%; position: relative; overflow: hidden;}*/
-/*.div2{ background-color: black; height: 100%;}*/
-video{ position: absolute; height: 100%; width: 100%; margin: 0; padding: 0; top: 0; bottom:0; right: 0; left: 0;}
 
 </style>
+
 </head>
+
 <body>
 
-    <!--<div class="div1">-->
-        <video autoplay muted loop id="myVideo">
-            <source src="portfolio_video_short.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-    <!--</div>-->
+    <div id="textdiv">
+        <h1>Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porta dictum turpis, eu mollis justo gravida ac. Proin non eros blandit, rutrum est a, cursus quam.</p>
+    </div>
 
-    <!--<video autoplay muted loop id="myVideo">
+    <video id="videoBG" poster="video_cover4.png" autoplay muted loop>
         <source src="portfolio_video_short.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>-->
-
-    <div class="topnav" id="myTopnav">
-        <font face="verdana" color="green">
-            <a href="#home" class="active">Home</a>
-            <a href="publications.html">Publications</a>
-            <a href="#contact">Patents</a>
-            <a href="#about">Contacts</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
-        </font>
-    </div>
-
-    <div class="content">
-        <h1>Jeong-Mo Hong</h1>
-        <p>A Research Programmer.</p>
-        <button id="myBtn" onclick="myFunction2()">Pause</button>
-    </div>
-
-    <div style="padding-left:0px">
-        <center>
-            <h1>Jeong-Mo Hong</h1>
-        </center>
-    </div>
-
-    <!--<div class="iframe-container">-->
-    <!--<p>Under construction</p>-->
-    <!--<img src="images/ACaseStudyOfFluidSimulation.png">-->
-    <!--<iframe src="https://player.vimeo.com/video/385168503" allow="autoplay; fullscreen" allowfullscreen></iframe>-->
-    <!--</div>-->
-
-    <script>
-
-        var video = document.getElementById("myVideo");
-        var btn = document.getElementById("myBtn");
-
-        function myFunction2() {
-            if (video.paused) {
-                video.play();
-                btn.innerHTML = "Pause";
-            } else {
-                video.pause();
-                btn.innerHTML = "Play";
-            }
-        }
-
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-
-    </script>
+    </video>
 
 </body>
 </html>

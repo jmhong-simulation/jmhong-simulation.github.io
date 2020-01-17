@@ -72,21 +72,21 @@ body {
         position: relative;
     }
 
-        .topnav.responsive .icon {
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 
-        .topnav.responsive a {
-            float: none;
-            display: block;
-            text-align: left;
-        }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
 }
 
 #myVideo {
-  position: fixed;
+  position: center;
   right: 0;
   bottom: 0;
   min-width: 100%; 
@@ -117,9 +117,25 @@ body {
   color: black;
 }
 
+/*.div1{ background-color: red; height: 100%; position: relative; overflow: hidden;}*/
+/*.div2{ background-color: black; height: 100%;}*/
+video{ position: absolute; height: 100%; width: 100%; margin: 0; padding: 0; top: 0; bottom:0; right: 0; left: 0;}
+
 </style>
 </head>
 <body>
+
+    <!--<div class="div1">-->
+        <video autoplay muted loop id="myVideo">
+            <source src="portfolio_video_short.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    <!--</div>-->
+
+    <!--<video autoplay muted loop id="myVideo">
+        <source src="portfolio_video_short.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>-->
 
     <div class="topnav" id="myTopnav">
         <font face="verdana" color="green">
@@ -130,11 +146,6 @@ body {
             <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
         </font>
     </div>
-
-    <video autoplay muted loop id="myVideo">
-        <source src="portfolio_video_short.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
 
     <div class="content">
         <h1>Jeong-Mo Hong</h1>
